@@ -1,31 +1,68 @@
-console.log("show site");
+const myproduct = new URLSearchParams(window.location.search).get("id");
+let productContainer = document.querySelector(".productContainer");
+fetch(`https://kea-alt-del.dk/t7/api/products/${myproduct}`)
+  .then((response) => response.json())
+  .then((data) => {
+    productContainer.innerHTML = `
+<div class="grid_1_1_1">
 
-const id = 1528;
-const produktUrl = "https://kea-alt-del.dk/t7/api/products/" + id;
-const productcontainer = document.querySelector(".category_list_container");
+            <div>
+                <img class="${
+                  data.soldout && "sold_out_img"
+                }" src="https://kea-alt-del.dk/t7/images/webp/640/${myproduct}.webp" alt="tshirt">
+                <div class="discount2 ${!data.discount && "hide"}">${
+      data.discount
+    }%</div>
+            </div>
+            
+            <div>
+                <h1>Product information</h1>
+            
+                <h2>Model Name</h2>
+                <p>${data.productdisplayname}</p>
+            
+                <h2>Color</h2>
+                <p>${data.colour1}</p>
 
-console.log("produkt:", produktUrl);
+                <h2>Price</h2>
 
-function getData() {
-  fetch(produktUrl).then((res) => res.json().then((data) => show(data)));
-}
-getData(); // Kalder funktionen getData
+                <p class= "pris_produkt_før ${
+                  !data.discount && "hide"
+                }">${Math.round(data.price * (1 - data.discount / 100))},-</p>
+                <p class="${data.discount && "foer_pris"}" >${data.price},-</p>
+            
+                <h2>Inventory number</h2>
+                <p>${data.id}</p>
+            
+                <h1>${data.brandname}</h1>
+                <p>${data.brandbio}</p>
+            </div>
+            
+            <div class="kurv">
+            
+                <h1>${data.productdisplayname}</h1>
+            
+                <p>${data.brandname}</p>
+    
 
-function show(data) {
-  console.log("show data er", data);
+                <div class="form-felt">
+                <label>
+                 <h3>Choose a size</h3>
+                <select name="liste">
+                <option value="">Vælg størrelse</option>
+                <option value="S">Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
+                <option value="XL">X-large</option>
+                </select>
+                </label>
+                </div>
+            
+            
+                <button>Add to basket</button>
+            
+            </div>
 
-  productcontainer.innerHTML = `
-
-    <article class="sold_out">
-        <img
-          src="https://kea-alt-del.dk/t7/images/webp/640/1543.webp"
-          id="udsolgt"
-          alt="placeholder"
-        />
-        <div class="udsolgt_tekst">UDSOLGT</div>
-        <h4>Puma sko</h4>
-        <h5>Puma | sko</h5>
-        <p class="pris">250 DKK</p>
-        <p>Sort Pumasko med hvis stribe på tvers</p>
-      </article>`;
-}
+        </div>
+`;
+  });
