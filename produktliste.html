@@ -3,57 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Produktliste</title>
+
+    <!-- font-family: "Host Grotesk", serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cutive+Mono&family=Dancing+Script:wght@400..700&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Inconsolata:wght@200..900&family=Italiana&family=Just+Me+Again+Down+Here&family=Slabo+27px&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="./produktliste.js" defer></script>
   </head>
+
   <body>
-    <h1>FashionRUs</h1>
-    <h2>Products</h2>
-    <a href="index.html">Back to main</a>
-    <section class="category_list_container">
-      <article>
-        <a href="produkt.html"
-          ><img
-            src="https://kea-alt-del.dk/t7/images/webp/640/1545.webp"
-            alt="placeholder"
-        /></a>
-        <h4>Puma sko</h4>
-        <h5>Hvide Puma sko med sort tribe på tvers</h5>
-        <p class="pris">250 DKK</p>
-      </article>
-      <article>
-        <a href="produkt.html"
-          ><img
-            src="https://kea-alt-del.dk/t7/images/webp/640/1546.webp"
-            alt="placeholder"
-        /></a>
-        <h4>Puma sko</h4>
-        <h5>Hvide Puma sko med sorte triber på tvers</h5>
-        <p class="pris">250 DKK</p>
-      </article>
-      <article link="produkt.html">
-        <a href="produkt.html"
-          ><img
-            src="https://kea-alt-del.dk/t7/images/webp/640/1544.webp"
-            alt="placeholder"
-        /></a>
-        <h4>Puma sko</h4>
-        <h5>Hvide Puma sko med sort tribe foran</h5>
-        <p class="pris">250 DKK</p>
-      </article>
-      <article class="sold_out" link="produkt.html">
-        <a href="produkt.html"
-          ><img
-            src="https://kea-alt-del.dk/t7/images/webp/640/1543.webp"
-            id="udsolgt"
-            alt="placeholder"
-        /></a>
-        <div class="udsolgt_tekst">UDSOLGT</div>
-        <h4>Puma sko</h4>
-        <h5>Sort Pumasko med hvis stribe på tvers</h5>
-        <p class="pris">250 DKK</p>
-      </article>
-    </section>
-    <script src="produkt.js"></script>
+    <header>
+      <a href="index.html"
+        ><img class="logo_img" src="logo.webp" alt="logo"
+      /></a>
+    </header>
+    <main>
+      <h1>Produktliste</h1>
+
+      <div class="produkt">
+        <!-- <div class="item">
+
+                <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp" alt="">
+
+                <h2>Sahara Team India Fanwear Round Neck Jersey</h2>
+
+                <p>Nike</p>
+                <div class="pris">
+                    <h3>DKK 1595,-</h3>
+                </div>
+                <a href="produkt.html">Read More</a>
+
+            </div>
+
+            <div class="item">
+
+                <img src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp" alt="">
+
+                <h2>Blue T20 Indian Cricket Jersey</h2>
+
+                <p>Nike</p>
+                <div class="pris">
+                    <h3>Prev. DKK 1595,-</h3>
+                    <h3>Now DKK 1560,-</h3>
+                </div>
+                <div class="discount">
+                    <p class="discount_tekst">-34%</p>
+                </div>
+                <a href="produkt.html">Read More</a>
+            </div>
+
+
+            <div class="item">
+
+                <img class="sold_out_img" src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp" alt="">
+                <div class="sold_out">
+                    <p class="sold_out_tekst">Sold Out</p>
+                </div>
+
+                <h2>Mean Team India Cricket Jersey</h2>
+
+                <p>Nike</p>
+                <div class="pris">
+                    <h3>DKK 2495,-</h3>
+                </div>
+                <a href="produkt.html">Read More</a>
+            </div>
+
+            <div class="item">
+
+                <img class="sold_out_img" src="https://kea-alt-del.dk/t7/images/webp/640/1525.webp" alt="">
+
+                <h2>Deck Navy Blue Backpack</h2>
+
+                <p>Puma</p>
+                <div class="pris">
+                    <h3>Prev. DKK 1595,-</h3>
+                    <h3>Now DKK 1560,-</h3>
+                </div>
+                <div class="discount">
+                    <p class="discount_tekst">-34%</p>
+                </div>
+                <div class="sold_out">
+                    <p class="sold_out_tekst">Sold Out</p>
+                </div>
+                <a href="produkt.html">Read More</a>
+
+            </div> -->
+      </div>
+    </main>
+    <footer></footer>
   </body>
 </html>
